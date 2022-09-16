@@ -1,5 +1,6 @@
 <?php
 function getLesNotes() {
+    //les notes des élèves
     $tNotes = array();
     for ($i = 0; $i < nbNotes; $i++) {
         $tNotes[$i] = abs(((int) (cos((float) $i + 1) * 1000)) % valSup);
@@ -21,9 +22,7 @@ function getLesLiens() {
     );
 }
 function getDistribution($Notes) {
-   
- 
-
+    //la statisque des notes
         $stat = array(
             '0-4' => 0,
             '4-8' => 0,
@@ -34,18 +33,18 @@ function getDistribution($Notes) {
 
         for ($i = 0; $i < sizeof($Notes); $i++) {
             
-            if ($Notes[$i] < 4) {
+            if ($Notes[$i] <= 4) {
                 $stat['0-4'] += 1;
-            } elseif ($Notes[$i] < 8) {
+            } if ($Notes[$i] <= 8 && $Notes[$i] >= 4) {
                 $stat['4-8'] += 1;
-            } elseif ($Notes[$i] < 12) {
+            } if ($Notes[$i] <= 12 && $Notes[$i] >= 8) {
                 $stat['8-12'] += 1;
-            } elseif ($Notes[$i] < 16) {
+            } if ($Notes[$i] <= 16 && $Notes[$i] >= 12) {
                 $stat['12-16'] += 1;
-            } else {
+            } if($Notes[$i] <= 20 && $Notes[$i] >= 16) {
                 $stat['16-20'] += 1;
             }
         }
-		return $stat;
+	return $stat;	
 }
 

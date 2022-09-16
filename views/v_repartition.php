@@ -1,43 +1,27 @@
-<table class="table">
-  <tbody>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
-
 <div class="container text-center">
     <div class="row justify-content-center">
         <div class="col-4">
-            <h3>Notes des élèves</h3>
+            <h3>Statistiques des notes entre:</h3>
             <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Élève n°</th>
-                    <th scope="col">Note</th>
-                </tr>
-                </thead>
                 <tbody>
-                <?php while ($k == min($lesNotes)): ?>
-                <?php foreach ($lesNotes as $k => $v): ?>
-                    <tr>
-                        <th scope="row"><?php echo $k + 1; ?></th>
-                        <td ><?php echo $v; ?></td>
-                    </tr>
-                <?php endforeach; ?>
+                  <tr>
+                    <td>0-4</td>
+                    <td>4-8</td>
+                    <td>8-12</td>
+                    <td>12-16</td>
+                    <td>16-20</td>
+                  </tr>
+                  <tr>
+                    <td><?php  echo $lesNotes['0-4']; ?></td>
+                    <td><?php  echo $lesNotes['4-8'] ?></td>
+                    <td><?php  echo $lesNotes['8-12'] ?></td>
+                    <td><?php  echo $lesNotes['12-16'] ?></td>
+                    <td><?php  echo $lesNotes['16-20'] ?></td>
+                  </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+

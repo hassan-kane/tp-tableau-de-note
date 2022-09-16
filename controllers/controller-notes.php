@@ -35,8 +35,8 @@ switch ($action) {
         }
     case 'repartition':
         {
-            $lesNotes = getLesNotes();
-            $message = "La note minimale est : ";
+            $Notes = getLesNotes();
+            $lesNotes = getDistribution($Notes);
             include("views/v_repartition.php");
             break;
         }
@@ -45,10 +45,5 @@ switch ($action) {
         $message = "Page introuvable";
         include 'views/404.php';
     }
-<<<<<<< HEAD
         
 }
-=======
-
-}
->>>>>>> 3ab41e2baf1f21b0a89ca692af750b62ddb601e3
